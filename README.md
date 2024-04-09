@@ -143,3 +143,5 @@ Sẽ chỉ cần nhập username/password một lần và lưu trong store để
 - `docker rmi -f $(docker images -aq)` Xóa tất cả các images
 
 - `docker volume prune -a -f` Xóa các volume
+
+- `docker compose exec names_dockerps php artisan config:cache` Cache config php dự án
