@@ -145,3 +145,5 @@ Sẽ chỉ cần nhập username/password một lần và lưu trong store để
 - `docker volume prune -a -f` Xóa các volume
 
 - `docker compose exec names_dockerps php artisan config:cache` Cache config php dự án
+
+- `code .` Tạo bản sao Vs code để mở vscode trên máy thật
