@@ -1,17 +1,5 @@
 # Huống dẫn sử dụng git
 
-## 1. Stash code để rebase code develop
-
-- Nếu có thay đổi -> chuyển hết vào stash : git stash -m "message"
-- Chạy lệnh rebase code từ develop: git pull --rebase origin develop
-- Lấy những thay đổi vừa lưu vào stash và xóa stash: git stash pop
-- Lưu các thay đổi vào stage: git add .
-- Lệnh commit: git commit -m "message"
-- Đẩy code lên nhánh: git push origin <branch>
-
-<br>
-<br>
-
 ## 1. Sử dụng git cơ bản
 
 - Link tải trang: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
@@ -26,3 +14,21 @@
 
 <br>
 <br>
+
+## 2. Config git
+
+- git config --global user.name "<username>"
+- git config --global user.email "<mailaddress>"
+- Xem tài khoản git: git config --global --list
+
+<br>
+<br>
+
+## 3. Stash code để rebase code develop
+
+- Nếu có thay đổi -> chuyển hết vào stash : git stash -m "message"
+- Chạy lệnh rebase code từ develop: git pull --rebase origin develop
+- Lấy những thay đổi vừa lưu vào stash và xóa stash: git stash pop
+- Lưu các thay đổi vào stage: git add .
+- Lệnh commit: git commit -m "message"
+- Đẩy code lên nhánh: git push origin <branch>
