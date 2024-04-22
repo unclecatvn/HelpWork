@@ -28,8 +28,8 @@
 - 2.8 Thêm user hiên tại vào nhóm sudo: `sudo usermod -aG sudo $USER`
 
 - Nếu mỗi lần sử dụng git lại phải nhập lại username/password. <br>
-Chạy lệnh `git config --global credential.helper store` <br>
-Sẽ chỉ cần nhập username/password một lần và lưu trong store để sử dụng cho các lần sau
+  Chạy lệnh `git config --global credential.helper store` <br>
+  Sẽ chỉ cần nhập username/password một lần và lưu trong store để sử dụng cho các lần sau
 
 <br>
 <br>
@@ -50,7 +50,7 @@ Sẽ chỉ cần nhập username/password một lần và lưu trong store để
 
 - Bật service docker trên WSL: `sudo service docker start`
 
-- Kiểm tra service đã bật bằng  `sudo service --status-all`. Nếu thấy trước docker là dấu [+] tức là đang hoạt động
+- Kiểm tra service đã bật bằng `sudo service --status-all`. Nếu thấy trước docker là dấu [+] tức là đang hoạt động
 
 ### Chú ý
 
@@ -59,19 +59,18 @@ Sẽ chỉ cần nhập username/password một lần và lưu trong store để
 - Có thể dùng lệnh `cat /var/log/docker.log` để in ra màn hình terminal luôn
 
 - Xem dòng cuối cùng có lỗi liên quan đến `iptables` thì chạy lệnh sau trong terminal ubuntu:
-`sudo update-alternatives --config iptables`
+  `sudo update-alternatives --config iptables`
 
 - Xem tùy chọn nào là `iptables-legacy` thì chọn, nhập số ở cột **Selection** tương ứng với **Path** muốn chọn, rồi **Enter**
 
 - Tắt và bật lại terminal
-
 
 <br>
 <br>
 
 ## 4. Cài đặt Make
 
-* Chạy lệnh sau trên WSL để cài đặt Make: `sudo apt install -y make`
+- Chạy lệnh sau trên WSL để cài đặt Make: `sudo apt install -y make`
 
 <br>
 <br>
@@ -89,7 +88,7 @@ Sẽ chỉ cần nhập username/password một lần và lưu trong store để
 
 - Nhập `ms-vscode-remote.remote-wsl` vào thanh tìm kiếm và cài đặt. Khi cài đặt xong thì tắt VSCode
 
-- Mở terminal, mở một tab mới sử dụng Ubuntu. 
+- Mở terminal, mở một tab mới sử dụng Ubuntu.
 
 - Tạo thư mục project `mkdir project`
 
@@ -97,11 +96,23 @@ Sẽ chỉ cần nhập username/password một lần và lưu trong store để
 
 - Vào mục `Extension` (phím tắt `Ctrl + Shift + X`). Khi đó sẽ có `LOCAL - INSTALLED` và `WSL: UBUNTU - INSTALLED`
 
-    + Bắt buộc: Nhập `ms-azuretools.vscode-docker` và chọn install để cài đặt Docker Extension
+  - Bắt buộc: Nhập `ms-azuretools.vscode-docker` và chọn install để cài đặt Docker Extension
 
-    + Không bắt buộc: Trên thanh `WSL: UBUNTU - INSTALLED` sẽ có biểu tượng download hình đám mây, click vào đó và chọn những extension đã cài ở LOCAL để cài lên trên WSL
+  - Không bắt buộc: Trên thanh `WSL: UBUNTU - INSTALLED` sẽ có biểu tượng download hình đám mây, click vào đó và chọn những extension đã cài ở LOCAL để cài lên trên WSL
 
 - Mở một dự án trên WSL bằng VSCode bằng cách `cd` vào thư mục và nhập `code .` hoặc thay dấu chấm bằng đường dẫn đến dự án (VD: `code /project/library/docker`). Khi đó Docker extension sẽ tự tìm các container trên wsl và có thể thao tác với docker qua extension này
+
+<br>
+<br>
+
+## 7. Tự động chạy docker khi khởi động lại máy
+
+- # Start docker service
+  if ! service docker status > /dev/null; then
+  echo "Docker service is not running. Starting Docker..."
+  sudo service docker start
+  fi
+- Thêm vào .bashrc
 
 <br>
 <br>
