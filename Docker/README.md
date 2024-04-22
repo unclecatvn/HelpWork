@@ -11,7 +11,7 @@
 
 ## 2. Tạo thư mục lưu máy ảo WSL
 
-- 2.1. Sử dụng email công ty, tải file zip sau: https://drive.google.com/file/d/1dXRJ72S7PFdNbOwPlcgu4nk3p6thcoH_/view?usp=drive_link
+- 2.1. Sử dụng email công ty, tải file zip sau: [Đường link tải file](https://drive.google.com/drive/folders/1pxwcJkQ-bPXxvOkIhpfICXHaz1zDdnem?usp=sharing)
 
 - 2.2. Tạo thư mục để lưu máy ảo WSL, ví dụ `D:\WSL`
 
