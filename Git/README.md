@@ -32,3 +32,25 @@
 - Lưu các thay đổi vào stage: git add .
 - Lệnh commit: git commit -m "message"
 - Đẩy code lên nhánh: git push origin <branch>
+
+### 1. Linh tinh
+
+- Thay đổi URL của remote origin hiện tại:
+
+```
+git remote set-url origin https://github.com/unclecatvn/BaseJava.git
+```
+
+- Xóa remote origin hiện tại và thêm lại:
+
+```
+git remote remove origin
+git remote add origin https://github.com/unclecatvn/BaseJava.git
+```
+
+- Kiểm tra các remote hiện có:
+
+```
+git remote -v
+git push -u origin main
+```
