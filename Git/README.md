@@ -1,56 +1,101 @@
-# Huống dẫn sử dụng git
 
-## 1. Sử dụng git cơ bản
+# Hướng dẫn sử dụng Git
 
-- Link tải trang: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
-- Kiểm tra version: git --version
-- Sao chép kho lữu trữ về máy tính của bạn: git clone [repository url]
-- Lệnh git init sẽ thêm kho lưu trữ Git cục bộ vào dự án.
-- Thêm toàn bộ những thay đổi ở source code: git add .
-- Sử dụng câu lệnh sau để commit file: git commit -m "Initial Commit"
-- Đẩy code lên nhánh git push origin <branch>
-- Nếu chưa có nhánh, tạo nhánh mới: git branch test và chuyển sang nhánh mong muốn: git checkout <branch>
-- Lấy code từ kho lưu trữ: git pull origin <branch>
+## 1. Sử dụng Git cơ bản
+
+- **Link tải Git**: [Git Installation Guide](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+- **Kiểm tra version**: 
+  ```bash
+  git --version
+  ```
+- **Sao chép kho lưu trữ về máy**: 
+  ```bash
+  git clone [repository-url]
+  ```
+- **Khởi tạo kho lưu trữ cục bộ**: 
+  ```bash
+  git init
+  ```
+- **Thêm thay đổi vào stage**: 
+  ```bash
+  git add .
+  ```
+- **Commit các thay đổi**: 
+  ```bash
+  git commit -m "Initial Commit"
+  ```
+- **Đẩy code lên nhánh từ xa**: 
+  ```bash
+  git push origin <branch>
+  ```
+- **Tạo và chuyển sang nhánh mới**:
+  ```bash
+  git branch <branch>
+  git checkout <branch>
+  ```
+- **Lấy code mới nhất từ nhánh**: 
+  ```bash
+  git pull origin <branch>
+  ```
 
 <br>
+
+## 2. Cấu hình Git
+
+- **Cấu hình username và email**:
+  ```bash
+  git config --global user.name "<username>"
+  git config --global user.email "<mailaddress>"
+  ```
+- **Kiểm tra cấu hình tài khoản**:
+  ```bash
+  git config --global --list
+  ```
+
 <br>
 
-## 2. Config git
+## 3. Stash code để rebase với develop
 
-- git config --global user.name "<username>"
-- git config --global user.email "<mailaddress>"
-- Xem tài khoản git: git config --global --list
+- **Chuyển các thay đổi vào stash**:
+  ```bash
+  git stash -m "message"
+  ```
+- **Rebase code từ develop**:
+  ```bash
+  git pull --rebase origin develop
+  ```
+- **Lấy lại các thay đổi từ stash và xóa stash**:
+  ```bash
+  git stash pop
+  ```
+- **Lưu các thay đổi vào stage và commit**:
+  ```bash
+  git add .
+  git commit -m "message"
+  ```
+- **Đẩy code lên nhánh từ xa**:
+  ```bash
+  git push origin <branch>
+  ```
 
 <br>
-<br>
 
-## 3. Stash code để rebase code develop
+## 4. Quản lý Remote Repository
 
-- Nếu có thay đổi -> chuyển hết vào stash : git stash -m "message"
-- Chạy lệnh rebase code từ develop: git pull --rebase origin develop
-- Lấy những thay đổi vừa lưu vào stash và xóa stash: git stash pop
-- Lưu các thay đổi vào stage: git add .
-- Lệnh commit: git commit -m "message"
-- Đẩy code lên nhánh: git push origin <branch>
-
-### 1. Linh tinh
-
-- Thay đổi URL của remote origin hiện tại:
-
-```
-git remote set-url origin https://github.com/unclecatvn/BaseJava.git
-```
-
-- Xóa remote origin hiện tại và thêm lại:
-
-```
-git remote remove origin
-git remote add origin https://github.com/unclecatvn/BaseJava.git
-```
-
-- Kiểm tra các remote hiện có:
-
-```
-git remote -v
-git push -u origin main
-```
+- **Thay đổi URL của remote origin hiện tại**:
+  ```bash
+  git remote set-url origin https://github.com/unclecatvn/BaseJava.git
+  ```
+- **Xóa remote origin và thêm lại**:
+  ```bash
+  git remote remove origin
+  git remote add origin https://github.com/unclecatvn/BaseJava.git
+  ```
+- **Kiểm tra các remote hiện tại**:
+  ```bash
+  git remote -v
+  ```
+- **Thiết lập nhánh chính khi đẩy code**:
+  ```bash
+  git push -u origin main
+  ```
