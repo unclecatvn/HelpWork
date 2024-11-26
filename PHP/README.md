@@ -6,6 +6,8 @@
 
 ```php
 composer install
+
+composer install --ignore-platform-req=ext-pcntl --ignore-platform-req=ext-posix
 ```
 
 ## 2. .Env

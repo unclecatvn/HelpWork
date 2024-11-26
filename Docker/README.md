@@ -82,25 +82,25 @@
 <br>
 <br>
 
-## 6. Cài đặt Extension trên VSCode
+## 6. Sử dụng cursor
 
-- Mở một file bất kỳ bằng VSCode, vào mục `Extension` (phím tắt `Ctrl + Shift + X`).
+1. Mở terminal WSL và mở file cấu hình shell:
+   - Với bash: 
+     ```bash
+     nano ~/.bashrc
+     ```
+   - Với zsh: 
+     ```bash
+     nano ~/.zshrc
+     ```
 
-- Nhập `ms-vscode-remote.remote-wsl` vào thanh tìm kiếm và cài đặt. Khi cài đặt xong thì tắt VSCode
+2. Thêm alias sau vào cuối file để gọi **Cursor** từ WSL:
+   ```bash
+   alias cursor="powershell.exe -Command 'Start-Process C:\\Users\\nguye\\AppData\\Local\\Programs\\cursor\\Cursor.exe'"
+   ```
 
-- Mở terminal, mở một tab mới sử dụng Ubuntu.
-
-- Tạo thư mục project `mkdir project`
-
-- Mở thư mục project bằng VSCode `code project`
-
-- Vào mục `Extension` (phím tắt `Ctrl + Shift + X`). Khi đó sẽ có `LOCAL - INSTALLED` và `WSL: UBUNTU - INSTALLED`
-
-  - Bắt buộc: Nhập `ms-azuretools.vscode-docker` và chọn install để cài đặt Docker Extension
-
-  - Không bắt buộc: Trên thanh `WSL: UBUNTU - INSTALLED` sẽ có biểu tượng download hình đám mây, click vào đó và chọn những extension đã cài ở LOCAL để cài lên trên WSL
-
-- Mở một dự án trên WSL bằng VSCode bằng cách `cd` vào thư mục và nhập `code .` hoặc thay dấu chấm bằng đường dẫn đến dự án (VD: `code /project/library/docker`). Khi đó Docker extension sẽ tự tìm các container trên wsl và có thể thao tác với docker qua extension này
+3. ```source ~/.bashrc```
+4. ```cursor .```
 
 <br>
 <br>
