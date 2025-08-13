@@ -1,30 +1,29 @@
-
 # Hướng dẫn sử dụng Git
 
 ## 1. Sử dụng Git cơ bản
 
 - **Link tải Git**: [Git Installation Guide](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
-- **Kiểm tra version**: 
+- **Kiểm tra version**:
   ```bash
   git --version
   ```
-- **Sao chép kho lưu trữ về máy**: 
+- **Sao chép kho lưu trữ về máy**:
   ```bash
   git clone [repository-url]
   ```
-- **Khởi tạo kho lưu trữ cục bộ**: 
+- **Khởi tạo kho lưu trữ cục bộ**:
   ```bash
   git init
   ```
-- **Thêm thay đổi vào stage**: 
+- **Thêm thay đổi vào stage**:
   ```bash
   git add .
   ```
-- **Commit các thay đổi**: 
+- **Commit các thay đổi**:
   ```bash
   git commit -m "Initial Commit"
   ```
-- **Đẩy code lên nhánh từ xa**: 
+- **Đẩy code lên nhánh từ xa**:
   ```bash
   git push origin <branch>
   ```
@@ -33,7 +32,7 @@
   git branch <branch>
   git checkout <branch>
   ```
-- **Lấy code mới nhất từ nhánh**: 
+- **Lấy code mới nhất từ nhánh**:
   ```bash
   git pull origin <branch>
   ```
@@ -54,29 +53,88 @@
 
 <br>
 
-## 3. Stash code để rebase với develop
+## 3. Git hay dùng
 
-- **Chuyển các thay đổi vào stash**:
-  ```bash
-  git stash -m "message"
-  ```
-- **Rebase code từ develop**:
-  ```bash
-  git pull --rebase origin develop
-  ```
-- **Lấy lại các thay đổi từ stash và xóa stash**:
-  ```bash
-  git stash pop
-  ```
-- **Lưu các thay đổi vào stage và commit**:
-  ```bash
+### 1. Squash commit
+
+```bash
   git add .
-  git commit -m "message"
-  ```
-- **Đẩy code lên nhánh từ xa**:
-  ```bash
-  git push origin <branch>
-  ```
+  git commit --amend --no-edit
+  git push --force-with-lease
+```
+
+### 2. Xoá tất cả stash
+
+```bash
+  git stash clear
+```
+
+### 3. Xoá stash mới nhất
+
+```bash
+  git stash drop
+```
+
+### 4. Xoá stash cụ thể (Ví dụ stash@{0})
+
+```bash
+  git stash drop stash@{0}
+```
+
+### 5. Apply và drop stash cụ thể (ví dụ stash@{1})
+
+```bash
+  git stash pop stash@{1}
+```
+
+### 6. Xoá commit không cần trong PR
+
+```bash
+git rebase -i HEAD~2
+```
+
+**Chi tiết cách thực hiện:**
+
+Sau khi chạy lệnh trên, một editor (thường là vim hoặc nano) sẽ mở ra với nội dung tương tự như này:
+
+```
+pick 1a2b3c4 [IMP] dtg_sale_report: Add COD report. (#1249)
+pick 5d6e7f8 [IMP] Improved invoice and transaction update process
+
+# Rebase 9g8h7i6..5d6e7f8 onto 9g8h7i6 (2 commands)
+#
+# Commands:
+# p, pick <commit> = use commit
+# r, reword <commit> = use commit, but edit the commit message
+# e, edit <commit> = use commit, but stop for amending
+# s, squash <commit> = use commit, but meld into previous commit
+# f, fixup <commit> = like "squash", but discard this commit's log message
+# x, exec <command> = run command (the rest of the line) using shell
+# b, break = stop here (continue rebase later with 'git rebase --continue')
+# d, drop <commit> = remove commit
+# l, label <name> = label current HEAD with a name
+# t, reset <name> = reset HEAD to a label
+# m, merge [-C <commit> | -c <commit>] <label> [# <oneline>]
+```
+
+**Để loại bỏ commit không mong muốn:**
+
+1. Thay đổi `pick` thành `drop` cho commit muốn xóa:
+
+   ```
+   drop 1a2b3c4 [IMP] dtg_sale_report: Add COD report. (#1249)
+   pick 5d6e7f8 [IMP] Improved invoice and transaction update process
+   ```
+
+2. Lưu và thoát:
+
+   - **Nếu dùng vim**: Nhấn `Esc`, gõ `:wq`, nhấn `Enter`
+   - **Nếu dùng nano**: Nhấn `Ctrl+X`, nhấn `Y`, nhấn `Enter`
+
+3. Đẩy thay đổi lên remote:
+   ```bash
+   git push origin <branch_name> --force
+   ```
 
 <br>
 
