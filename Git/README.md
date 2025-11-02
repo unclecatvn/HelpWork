@@ -157,3 +157,70 @@ pick 5d6e7f8 [IMP] Improved invoice and transaction update process
   ```bash
   git push -u origin main
   ```
+
+<br>
+
+## 5. Cấu hình SSH cho Git
+
+### 1. Tạo SSH key mới
+
+```bash
+ssh-keygen -t ed25519 -C "your_email@example.com"
+```
+
+**Lưu ý**: Nhấn Enter để sử dụng đường dẫn mặc định (`~/.ssh/id_ed25519`)
+
+### 2. Thêm SSH key vào SSH agent
+
+```bash
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
+```
+
+### 3. Sao chép public key để thêm vào GitHub/GitLab
+
+```bash
+cat ~/.ssh/id_ed25519.pub
+```
+
+**Lưu ý**: Copy toàn bộ nội dung hiển thị (từ `ssh-ed25519` hoặc `ssh-rsa` đến cuối)
+
+### 4. Thêm SSH key vào GitHub
+
+1. Vào **Settings** → **SSH and GPG keys**
+2. Click **New SSH key**
+3. Dán public key đã copy vào
+4. Click **Add SSH key**
+
+### 5. Kiểm tra kết nối SSH với GitHub
+
+```bash
+ssh -T git@github.com
+```
+
+**Kết quả mong đợi**: "Hi username! You've successfully authenticated..."
+
+### 6. Clone repository qua SSH
+
+```bash
+git clone git@github.com:username/repository.git
+```
+
+### 7. Thay đổi remote URL từ HTTPS sang SSH
+
+```bash
+git remote set-url origin git@github.com:username/repository.git
+```
+
+Hoặc xóa và thêm lại:
+
+```bash
+git remote remove origin
+git remote add origin git@github.com:username/repository.git
+```
+
+### 8. Kiểm tra remote URL hiện tại
+
+```bash
+git remote -v
+```
