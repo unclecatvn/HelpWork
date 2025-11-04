@@ -87,7 +87,7 @@
   git stash pop stash@{1}
 ```
 
-### 6. Xoá commit không cần trong PR
+### 6. Rebase interactive để chỉnh sửa commit (xóa, sửa, squash, reorder)
 
 ```bash
 git rebase -i HEAD~2
