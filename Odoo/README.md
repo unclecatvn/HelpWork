@@ -133,10 +133,10 @@ admin_passwd = admin_password_123
 
 ```bash
 # Chạy trực tiếp
-python -m odoo.bin --config ~/.config/odoo/odoo.conf
+python3 odoo-bin -c ~/.config/odoo/odoo.conf
 
 # Hoặc chạy dạng nền
-nohup python -m odoo.bin --config ~/.config/odoo/odoo.conf > /tmp/odoo.log 2>&1 &
+nohup python3 odoo-bin -c ~/.config/odoo/odoo.conf > /tmp/odoo.log 2>&1 &
 ```
 
 ## Kiểm Tra và Khởi Động
@@ -148,19 +148,41 @@ nohup python -m odoo.bin --config ~/.config/odoo/odoo.conf > /tmp/odoo.log 2>&1 
 source /opt/odoo/venv/bin/activate
 
 # Test connection
-python -c "import psycopg2; conn = psycopg2.connect('dbname=odoo_18 user=odoo password=password123'); print('✓ Connection OK')"
+python3 -c "import psycopg2; conn = psycopg2.connect('dbname=odoo_18 user=odoo password=password123'); print('✓ Connection OK')"
 ```
 
 ### 2. Kiểm Tra Dependencies
 
 ```bash
-python -m pip check
+python3 -m pip check
 ```
 
-### 3. Khởi Tạo Database
+### 3. Tạo Database Mới
+
+Để tạo một database mới cho Odoo 18, sử dụng lệnh sau:
 
 ```bash
-python -m odoo.bin -d odoo_18 --init=base --without-demo
+# Tạo database mới với module base
+python3 odoo-bin -c odoo.conf -d ten_database_moi -i base --stop-after-init
+```
+
+**Giải thích các tham số:**
+- `-c odoo.conf`: Đường dẫn đến file cấu hình Odoo
+- `-d ten_database_moi`: Tên database mới muốn tạo
+- `-i base`: Cài đặt module base (bắt buộc)
+- `--stop-after-init`: Dừng Odoo sau khi khởi tạo xong
+
+**Ví dụ khác:**
+
+```bash
+# Tạo database với nhiều module
+python3 odoo-bin -c odoo.conf -d my_company -i base,sale,purchase,stock --stop-after-init
+
+# Tạo database không có dữ liệu demo
+python3 odoo-bin -c odoo.conf -d my_company -i base --without-demo=all --stop-after-init
+
+# Sử dụng đường dẫn đầy đủ đến file config
+python3 odoo-bin -c ~/.config/odoo/odoo.conf -d my_company -i base --stop-after-init
 ```
 
 ### 4. Truy Cập Web Interface
@@ -185,7 +207,7 @@ lsof -i :8069
 kill -9 <PID>
 
 # Hoặc dùng port khác
-python -m odoo.bin --http-port 8070
+python3 odoo-bin -c odoo.conf --http-port 8070
 ```
 
 ## Tối Ưu Performance
