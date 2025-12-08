@@ -17,6 +17,15 @@
   # Hoặc dùng --branch (tương đương với -b)
   git clone --branch <branch_name> [repository-url]
   ```
+- **Sao chép 1 nhánh cụ thể và chỉ lấy commit mới nhất (Shallow clone)**:
+  ```bash
+  git clone --depth 1 --branch <branch_name> [repository-url]
+  ```
+  > **Lưu ý**: 
+  > - **Vẫn lấy đầy đủ toàn bộ Source Code** (file/folder) tại thời điểm commit đó.
+  > - Bạn vẫn có thể `git pull` để lấy code mới về bình thường.
+  > - Tuy nhiên, bạn sẽ không thấy lịch sử commit cũ (trước khi clone).
+  > - Nếu cần lấy lại toàn bộ lịch sử sau này, dùng lệnh: `git fetch --unshallow`
 - **Khởi tạo kho lưu trữ cục bộ**:
   ```bash
   git init
