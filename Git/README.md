@@ -11,6 +11,12 @@
   ```bash
   git clone [repository-url]
   ```
+- **Sao chép một nhánh cụ thể**:
+  ```bash
+  git clone -b <branch_name> [repository-url]
+  # Hoặc dùng --branch (tương đương với -b)
+  git clone --branch <branch_name> [repository-url]
+  ```
 - **Khởi tạo kho lưu trữ cục bộ**:
   ```bash
   git init
