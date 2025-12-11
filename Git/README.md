@@ -21,7 +21,8 @@
   ```bash
   git clone --depth 1 --branch <branch_name> [repository-url]
   ```
-  > **Lưu ý**: 
+  > **Lưu ý**:
+  >
   > - **Vẫn lấy đầy đủ toàn bộ Source Code** (file/folder) tại thời điểm commit đó.
   > - Bạn vẫn có thể `git pull` để lấy code mới về bình thường.
   > - Tuy nhiên, bạn sẽ không thấy lịch sử commit cũ (trước khi clone).
@@ -150,6 +151,29 @@ pick 5d6e7f8 [IMP] Improved invoice and transaction update process
    ```bash
    git push origin <branch_name> --force
    ```
+
+### 7. Rebase nhánh đang code với nhánh khác
+
+```bash
+git rebase origin/18.0
+```
+
+**Cú pháp push đúng sau khi rebase:**
+
+```bash
+git push folked feature/3024
+```
+
+**Nếu cần force push sau rebase:**
+
+```bash
+git push folked feature/3024 --force-with-lease
+```
+
+> **Lưu ý**:
+>
+> - `--force-with-lease` an toàn hơn `--force` vì nó sẽ kiểm tra xem remote có thay đổi nào khác không trước khi force push
+> - Chỉ dùng force push khi bạn chắc chắn về thay đổi của mình và đã rebase thành công
 
 <br>
 
