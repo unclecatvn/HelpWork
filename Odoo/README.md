@@ -53,18 +53,7 @@ Odoo 18 là phiên bản mới nhất của hệ thống ERP/CRM mã nguồn m�
 
 ## 🪟 Cài Đặt Trên Windows
 
-<div align="center">
-
-```
-┌──────────────────────────────────────────────────────────┐
-│                    WINDOWS INSTALLATION                   │
-│                                                          │
-│   Python 3.10+  →  PostgreSQL 13+  →  Git  →  Odoo 18   │
-│                                                          │
-└──────────────────────────────────────────────────────────┘
-```
-
-</div>
+![Windows Installation Flow](images/windows-install/windows-install-flow.png)
 
 ### 📥 Bước 1: Cài Đặt Python
 
