@@ -22,18 +22,22 @@ Repo này tổng hợp các hướng dẫn, cheat sheet và các lưu ý quan tr
 ---
 
 ## 1. Docker & WSL
+
 [Truy cập hướng dẫn chi tiết](Docker/README.md)
 
 Hướng dẫn bao gồm:
+
 - Cài đặt WSL (Windows Subsystem for Linux)
 - Cài đặt Docker trên Windows/WSL
 - Các lệnh Docker thường dùng (ps, images, run, stop, rm...)
 - Cài đặt các công cụ hỗ trợ (Make, Windows Terminal, Cursor)
 
 ## 2. Git
+
 [Truy cập hướng dẫn chi tiết](Git/README.md)
 
 Hướng dẫn bao gồm:
+
 - Các lệnh Git cơ bản (clone, init, add, commit, push, pull...)
 - Clone theo nhánh cụ thể (`git clone -b <branch>`)
 - Cấu hình Git (username, email)
@@ -42,25 +46,31 @@ Hướng dẫn bao gồm:
 - Cấu hình SSH Key cho GitHub/GitLab
 
 ## 3. PHP & Laravel
+
 [Truy cập hướng dẫn chi tiết](PHP/README.md)
 
 Hướng dẫn bao gồm:
+
 - Cài đặt và sử dụng Composer
 - Cấu hình file .env
 - Tích hợp Node.js trong dự án Laravel
 - Sử dụng Laravel Mix để build assets
 
 ## 4. Node.js
+
 [Truy cập hướng dẫn chi tiết](Nodejs/README.md)
 
 Hướng dẫn bao gồm:
+
 - Link tải Node.js
 - Khắc phục lỗi "running scripts is disabled" trên PowerShell (Windows)
 
 ## 5. Odoo
+
 [Truy cập hướng dẫn chi tiết](Odoo/README.md)
 
 Hướng dẫn bao gồm:
+
 - Cài đặt Odoo 18 trên Ubuntu/Debian
 - Cài đặt các dependencies và PostgreSQL
 - Cấu hình file `odoo.conf`
@@ -71,11 +81,12 @@ Hướng dẫn bao gồm:
 
 ## Cập nhật gần đây
 
-| Ngày | Nội dung |
-|------|----------|
-| 2025-12-08 | Thêm hướng dẫn clone theo nhánh cụ thể (Git) |
-| 2025-12-08 | Cập nhật README với mô tả chi tiết |
-| 2025-12-05 | Thêm hướng dẫn tạo database Odoo 18 |
+| Ngày       | Nội dung                                                  |
+| ---------- | --------------------------------------------------------- |
+| 2026-01-15 | Cập nhật hướng dẫn Odoo 18 (Python 3.12.7, PostgreSQL 18) |
+| 2025-12-08 | Thêm hướng dẫn clone theo nhánh cụ thể (Git)              |
+| 2025-12-08 | Cập nhật README với mô tả chi tiết                        |
+| 2025-12-05 | Thêm hướng dẫn tạo database Odoo 18                       |
 
 ---
 
@@ -96,6 +107,7 @@ Bạn muốn đóng góp thêm nội dung? Hãy làm theo các bước sau:
 5. **Push** và tạo **Pull Request**
 
 ### Quy tắc đóng góp
+
 - Sử dụng tiếng Việt cho nội dung hướng dẫn
 - Mỗi công nghệ/chủ đề nên có một thư mục riêng với file `README.md`
 - Sử dụng Markdown chuẩn
