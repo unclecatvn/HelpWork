@@ -1,4 +1,8 @@
-# Sổ tay hướng dẫn cho Developer (Developer Handbook)
+<p align="center">
+  <img src="assets/images/readme-background.png" alt="HelpWork Developer Handbook Background" />
+</p>
+
+# HelpWork Developer Handbook
 
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
@@ -6,121 +10,107 @@
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
 ![Odoo](https://img.shields.io/badge/Odoo-714B67?style=for-the-badge&logo=odoo&logoColor=white)
 
-Repo này tổng hợp các hướng dẫn, cheat sheet và các lưu ý quan trọng cho công việc lập trình hàng ngày.
+A practical, community-driven handbook for daily development workflows, setup guides, and troubleshooting notes.
 
-## Mục lục
+## Table of Contents
 
-- [1. Docker & WSL](#1-docker--wsl)
-- [2. Git](#2-git)
-- [3. PHP & Laravel](#3-php--laravel)
-- [4. Node.js](#4-nodejs)
-- [5. Odoo](#5-odoo)
-- [Cập nhật gần đây](#cập-nhật-gần-đây)
-- [Đóng góp](#đóng-góp)
-- [Tác giả](#tác-giả)
+- [Overview](#overview)
+- [Docker \& WSL](#docker--wsl)
+- [Git](#git)
+- [PHP \& Laravel](#php--laravel)
+- [Node.js](#nodejs)
+- [Odoo](#odoo)
+- [Recent Updates](#recent-updates)
+- [Contributing](#contributing)
+- [Author](#author)
 
----
+## Overview
 
-## 1. Docker & WSL
+This repository centralizes quick references and step-by-step guides for common developer tasks across multiple stacks.
 
-[Truy cập hướng dẫn chi tiết](Docker/README.md)
+## Docker & WSL
 
-Hướng dẫn bao gồm:
+[Open detailed guide](Docker/README.md)
 
-- Cài đặt WSL (Windows Subsystem for Linux)
-- Cài đặt Docker trên Windows/WSL
-- Các lệnh Docker thường dùng (ps, images, run, stop, rm...)
-- Cài đặt các công cụ hỗ trợ (Make, Windows Terminal, Cursor)
+Key topics:
 
-## 2. Git
+- WSL (Windows Subsystem for Linux) setup
+- Docker installation on Windows/WSL
+- Frequently used Docker commands (`ps`, `images`, `run`, `stop`, `rm`)
+- Supporting tools setup (Make, Windows Terminal, Cursor)
 
-[Truy cập hướng dẫn chi tiết](Git/README.md)
+## Git
 
-Hướng dẫn bao gồm:
+[Open detailed guide](Git/README.md)
 
-- Các lệnh Git cơ bản (clone, init, add, commit, push, pull...)
-- Clone theo nhánh cụ thể (`git clone -b <branch>`)
-- Cấu hình Git (username, email)
-- Các kỹ thuật nâng cao: Squash commit, Stash, Rebase interactive
-- Quản lý Remote Repository
-- Cấu hình SSH Key cho GitHub/GitLab
+Key topics:
 
-## 3. PHP & Laravel
+- Core Git commands (`clone`, `init`, `add`, `commit`, `push`, `pull`)
+- Clone a specific branch (`git clone -b <branch>`)
+- Git identity setup (username, email)
+- Advanced workflows: squash, stash, interactive rebase
+- Remote repository management
+- SSH key setup for GitHub/GitLab
 
-[Truy cập hướng dẫn chi tiết](PHP/README.md)
+## PHP & Laravel
 
-Hướng dẫn bao gồm:
+[Open detailed guide](PHP/README.md)
 
-- Cài đặt và sử dụng Composer
-- Cấu hình file .env
-- Tích hợp Node.js trong dự án Laravel
-- Sử dụng Laravel Mix để build assets
+Key topics:
 
-## 4. Node.js
+- Composer installation and usage
+- `.env` file configuration
+- Node.js integration in Laravel projects
+- Asset build process with Laravel Mix
 
-[Truy cập hướng dẫn chi tiết](Nodejs/README.md)
+## Node.js
 
-Hướng dẫn bao gồm:
+[Open detailed guide](Nodejs/README.md)
 
-- Link tải Node.js
-- Khắc phục lỗi "running scripts is disabled" trên PowerShell (Windows)
+Key topics:
 
-## 5. Odoo
+- Node.js download and installation references
+- Fixing PowerShell "running scripts is disabled" issue on Windows
 
-[Truy cập hướng dẫn chi tiết](Odoo/README.md)
+## Odoo
 
-Hướng dẫn bao gồm:
+[Open detailed guide](Odoo/README.md)
 
-- Cài đặt Odoo 18 trên Ubuntu/Debian
-- Cài đặt các dependencies và PostgreSQL
-- Cấu hình file `odoo.conf`
-- Các lệnh tạo database và quản lý service
-- Tối ưu performance và backup/restore
+Key topics:
 
----
+- Odoo 18 installation on Ubuntu/Debian
+- Dependency and PostgreSQL setup
+- `odoo.conf` configuration
+- Database and service management commands
+- Performance tuning and backup/restore basics
 
-## Cập nhật gần đây
+## Contributing
 
-| Ngày       | Nội dung                                                  |
-| ---------- | --------------------------------------------------------- |
-| 2026-01-15 | Cập nhật hướng dẫn Odoo 18 (Python 3.12.7, PostgreSQL 18) |
-| 2025-12-08 | Thêm hướng dẫn clone theo nhánh cụ thể (Git)              |
-| 2025-12-08 | Cập nhật README với mô tả chi tiết                        |
-| 2025-12-05 | Thêm hướng dẫn tạo database Odoo 18                       |
+Want to improve this handbook? Follow these steps:
 
----
-
-## Đóng góp
-
-Bạn muốn đóng góp thêm nội dung? Hãy làm theo các bước sau:
-
-1. **Fork** repo này
-2. **Tạo nhánh mới** cho feature của bạn:
+1. Fork this repository.
+2. Create a new feature branch:
    ```bash
-   git checkout -b feature/ten-huong-dan-moi
+   git checkout -b feature/your-guide-name
    ```
-3. **Thêm nội dung** vào thư mục tương ứng hoặc tạo thư mục mới
-4. **Commit** thay đổi:
+3. Add or update content in the relevant folder.
+4. Commit your changes:
    ```bash
-   git commit -m "Thêm hướng dẫn [tên hướng dẫn]"
+   git commit -m "Add [guide name]"
    ```
-5. **Push** và tạo **Pull Request**
+5. Push your branch and open a Pull Request.
 
-### Quy tắc đóng góp
+Contribution guidelines:
 
-- Sử dụng tiếng Việt cho nội dung hướng dẫn
-- Mỗi công nghệ/chủ đề nên có một thư mục riêng với file `README.md`
-- Sử dụng Markdown chuẩn
-- Thêm ví dụ code khi có thể
+- Keep guide content in Vietnamese (as the team standard)
+- Use one folder per technology/topic with its own `README.md`
+- Follow clean Markdown formatting
+- Add runnable examples whenever possible
 
----
+## Author
 
-## Tác giả
-
-👤 **UncleCat**
+**UncleCat**
 
 - GitHub: [@unclecatvn](https://github.com/unclecatvn)
 
----
-
-⭐ Nếu repo này hữu ích, hãy cho một star nhé!
+If this handbook is useful, please consider giving it a star.
